@@ -5,6 +5,10 @@
 
 Simple utility to copy files from/to s3.
 
+## Rationale
+
+The AWS CLI is the defacto tool of choice for anything AWS related including S3. However, the CLI toolkit is relatively heavy and requires a number of dependencies which will bloat any standard docker image. The s3cp command solves this problem by providing a simple, standalone AWS S3 copy utility fit for minimal docker containers.
+
 ## Getting Started
 
 To install s3cp simply do:
