@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"flag"
-	"fmt"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -38,7 +37,7 @@ func main() {
 
 		downloader := s3manager.NewDownloader(session.New())
 
-		result, err := downloader.Download(f, &s3.GetObjectInput{
+		_, err = downloader.Download(f, &s3.GetObjectInput{
 			Bucket: aws.String(u.Host),
 			Key:    aws.String(u.Path),
 		})
@@ -55,8 +54,6 @@ func main() {
 
 			return
 		}
-
-		fmt.Println(result)
 	} else if strings.HasPrefix(*toPtr, "s3://") {
 		u, err := url.Parse(*toPtr)
 
