@@ -4,3 +4,29 @@
 # go-s3cp
 
 Simple utility to copy files from/to s3.
+
+## Getting Started
+
+To install s3cp simply do:
+
+```sh
+$ go get github.com/opendevsecops/go-s3cp
+```
+
+Once the command is installed in your home go/bin folder execute it like this:
+
+```sh
+$ ~/go/bin/go-s3cp --help
+```
+
+The command is very simple as it serves a single purpose (copying a file to/from/ s3). To copy a local file into s3 do:
+
+```sh
+$ ~/go/bin/go-s3cp --from /path/to/file --to s://bucket/key
+```
+
+To copy a file from s3 do:
+
+```sh
+$ ~/go/bin/go-s3cp --to /path/to/file --from s://bucket/key
+````
